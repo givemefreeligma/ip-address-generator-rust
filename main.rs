@@ -3,14 +3,12 @@ use std::fs::File;
 use std::io::{self, Write};
 
 fn main() -> io::Result<()> {
-    let mut file = File::create("ip_addresses.txt")?;
+    let n: i32 = std::env::args().nth(1).expect("Please provide number of IP addresses").parse().expect("Please provide a valid number");
     
-    for _ in 0..10000000000000000000000000000000000_i128 {
+    for _ in 0..n {
         let ip_address = generate_random_ip();
-        writeln!(file, "{}", ip_address)?;
+        println!("{}", ip_address);
     }
-    
-    println!("100 IP addresses have been written to ip_addresses.txt");
     Ok(())
 }
 
