@@ -1,5 +1,5 @@
 use rand::Rng;
-use std::io::{self;
+use std::io::{self};
 
 fn main() -> io::Result<()> {
     let n: i32 = std::env::args().nth(1).expect("Please provide number of IP addresses").parse().expect("Please provide a valid number");
